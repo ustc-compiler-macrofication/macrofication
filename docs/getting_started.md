@@ -6,10 +6,11 @@
 从概念上讲，Macrofication涉及到反向运行宏观扩展，但是，它确实需要更复杂的模式匹配算法和附加检查来确保重构始终保留程序行为。
 这里有一个实现在JavaScript的Macrofication工具，叫做sweet.js，将其整合到一个开发环境中，并通过重构进行评估。在这里，sweet.js对于复杂的重构也足够的灵活性，同时即使对于较大的代码库也能很好地运行。
 
-## 安装 sweet.js（暂行）
+## 安装 sweet.js
 在[官网](https://www.sweetjs.org/) 上给了安装方案，但是需要配置一些环境；
 下面所说的示例均在linux环境上：
 
+### 安装npm与nodjs
 sweet.js需要安装相应nodejs包，这里的nodejs版本必须是7.0.0以上，所以不能使用直接apt install安装：
 
 ```
@@ -22,7 +23,11 @@ sudo apt-get install -y nodejs
 ```
 sudo apt install npm
 ```
-这时你就可以安装sweet.js
+
+或者采用[官网](https://nodejs.org/en/) 所提供的包，截止到文档提交的时刻，nodejs最新版本是9.3.0，你要下载自己想安装的包，之后自己解压并加在相应的路径中；
+
+### sweetjs的安装
+这时你就可以安装sweet.js；
 
 ```
 sudo npm install -g @sweet-js/cli @sweet-js/helpers
@@ -41,6 +46,9 @@ hi
 使用命令运行：
 ```
 $ sjs sweet_code.js
-console.log('hello, world!')
 ```
 他会输出`console.log('hello, world!')`，这是宏扩展之后的结果。
+
+作者给出了一个[在线编辑](http://www.sweetjs.org/browser/editor.html) sweetjs的网站，你可以在这里尝试，而不是自己安装；
+
+[sweetjs](https://github.com/sweet-js/sweet-core)到现在仍然是github上一个比较活跃的项目，仍然有许多开发者在其中完善已有的功能并且修改其中的bug；
