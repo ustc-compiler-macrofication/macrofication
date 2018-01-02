@@ -6,7 +6,7 @@
 如下，我们设h为一个tokens tree，那么他可以是单个tokens k，也可以是被包围在分隔符{s}中的序列:
 ```
 h :: = k | {s}
-s ::= k · s | {s} · s 
+s ::= k · s | {s} · s | null
 ```
 在这里的程序被转换成一个tokens tree的序列；
 
@@ -16,14 +16,14 @@ s ::= k · s | {s} · s
 JavaScript语句“arr [i + 1];”可以表示为以下的tokens tree序列，其中方括号“[”和“]”在分隔符匹配之后变成简单的tokens k。
 ```
 arr 	  [  i     +     1    ]    ; 
-k    · { k · k · k · k · k ·  } · k 
+k    · { k · k · k · k · k ·  } · k · null
 ```
 
 在这里，我们将一个模式或模板定义为一系列包含在分隔符中的标记，变量和模式模板序列。
 
 在这里，我们将将宏环境Σ中的所有宏表示为（名称，模式，模板）元组的有序序列。
 ```
-p, t ::= k · p | {p} · p | x · p 
+p, t ::= k · p | {p} · p | x · p | null
  x : Pattern Variable 
 ```
 模式变量x要么未绑定，要么绑定到tokens tree h。我们使用Θ来表示变量绑定的环境，即Θ : x → h。
