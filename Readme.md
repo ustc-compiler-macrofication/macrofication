@@ -21,6 +21,8 @@ Macrofication灵活性好，可扩展性强，在这里我们将深入研究其�
 
 [sweet.js-tutorials](https://github.com/jlongster/sweet.js-tutorials) 
 
+[sweetjs-helpers](http://sweet-helpers.readthedocs.io/en/latest/) 
+
 [edit sweetjs](http://www.sweetjs.org/browser/editor.html#macro%20foo%20%7B%0A%20%20rule%20%7B$x%7D=%3E%7B$x%7D%0A%7D%0A%0Afoo%20%22Hi%20there!%22;%0Afoo%20%22Another%20string%22;) 
 
 [source code](https://github.com/sweet-js/sweet-core) 
