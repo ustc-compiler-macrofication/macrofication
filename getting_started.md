@@ -20,6 +20,7 @@ sudo apt-get install -y nodejs
 ```
 这里安装的是nodejs9.0版本；
 或者你也可以安装rhino;
+
 之后安装npm；
 ```
 sudo apt install npm
