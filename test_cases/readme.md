@@ -43,6 +43,40 @@ foo => 5;
 foo 6;
 foo [bar];
 ```
+规则的顺序是严格的。这是我们要学习的模式匹配的一个基本的原则。他是从顶至底匹配的，所以更细的模式应在包容性更强的模式上面。例如，[$x] 是比 $x 更细粒度的，如果你切换他们的顺序，foo [bar]将匹配到更包容的模式，也就是说有些就匹配不到了;
+### Pattern class
+当你用一个模式变量 $x，他匹配任何在其位置代表的东西，无论是字符串，数组表达式,如果要限定他匹配的类型,可以指定一个特殊的解析类 parse class:
+- expr 表达式
+- ident 一个标识符
+- lit 一段文字
+使用模式解析类，当出问题的时候，你会得到很好的匹配错误警告。
+```
+macro foo {
+  rule { $x:lit } => { $x + 'lit' }
+  rule { $x:ident } => { $x + 'ident' }
+  rule { $x:expr } => { $x + 'expr' }
+}
+
+foo 3;
+foo "string";
+foo bar;
+foo [1, 2, 3];
+foo baz();
+```
+会有
+```
+3 + 'lit';
+'string' + 'lit';
+bar + 'ident';
+[
+    1,
+    2,
+    3
+] + 'expr';
+baz + 'ident'();
+```
+在这里sweetjs是不贪婪的；
+
 ### Recursive Macros and let
 而下面对于这种格式，他将会输出 ` 'expression: ' + 1 + 2 + 3;`你可以阅读我们所写的../doc/中的section3来了解其工作原理；
 ```
