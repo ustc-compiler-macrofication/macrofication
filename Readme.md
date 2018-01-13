@@ -7,7 +7,7 @@
 | -------------| ------------- | ---------------------------------------------------------- |-----|
 |       李强	|PB15111612|[PB15111612](https://github.com/PB15111612) |队员|
 | 	余浩       |PB15000372| [difftime](https://github.com/difftime)     	    |队长|
-| 	周琪       |PB15050988| [ZhouQida](https://github.com/ZhouQida) 	    |队员|
+| 	周祺       |PB15050988| [ZhouQida](https://github.com/ZhouQida) 	    |队员|
 
 ## Introduction
 Macrofication是运行在JavaScript语言中的一种新颖的重构过程，对于每一个pattern-template宏，他自动生成一个相应的重构工具，用于查找与宏模板相匹配的复杂片断，并用更简单的宏调用模式来替换他们；
