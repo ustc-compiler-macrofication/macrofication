@@ -33,5 +33,5 @@ syntax class = function (ctx) {
   }
   return construct.concat(result);
 };
-
+//这时一个有关于在sweetjs中class的简单实现
 

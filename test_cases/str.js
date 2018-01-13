@@ -1,8 +1,7 @@
-import { fromIdentifier } from '@sweet-js/helpers' for syntax;
+import { isStringLiteral } from '@sweet-js/helpers' for syntax;
 
 syntax m = ctx => {
-  let dummy = #`dummy`.get(0);
-
-  return #`${fromIdentifier(dummy, 'bar')}`;
+  return isStringLiteral(ctx.next().value) ? #`'a string'` : #`'not a string'`;
 };
-m foo
+m 'foo'
+//这是一个有关于判断字符串的code
