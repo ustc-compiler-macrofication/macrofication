@@ -1,14 +1,5 @@
 import { unwrap, isIdentifier } from '@sweet-js/helpers' for syntax;
-class Droid {
-  constructor(name, color) {
-    this.name = name;
-    this.color = color;
-  }
 
-  rollWithIt(it) {
-    return this.name + " is rolling with " + it;
-  }
-}
 
 syntax class = function (ctx) {
   let name = ctx.next().value;
@@ -33,5 +24,24 @@ syntax class = function (ctx) {
   }
   return construct.concat(result);
 };
-//这时一个有关于在sweetjs中class的简单实现
 
+class Droid {
+  constructor(name, color) {
+    this.name = name;
+    this.color = color;
+  }
+
+  rollWithIt(it) {
+    return this.name + " is rolling with " + it;
+  }
+}
+//这时一个有关于在sweetjs中class的简单实现
+//他将会返回：
+//function Droid(name, color) {
+//  this.name = name;
+//  this.color = color;
+//}
+//
+//Droid.prototype.rollWithIt = function(it) {
+//  return this.name + " is rolling with " + it;
+//};

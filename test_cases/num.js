@@ -13,3 +13,4 @@ syntax m = function (ctx) {
   return #`${a} + ${b} + 24`; // 30 + 42 + 24
 };
 m 30 + 42 + 66
+//return 30 + 42 + 24 + 66;

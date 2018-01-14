@@ -32,3 +32,8 @@ let realTypeof = cond {
   case typeof x === 'object': 'object'
   default: typeof x
 }
+//返回：
+// var x = null;
+// var realTypeof = x === null ? "null" :
+//                  Array.isArray(x) ? "array" :
+//                  typeof x === "undefined" ? "undefined" : typeof x);
